@@ -1,0 +1,356 @@
+/* 主题相关的CSS变量 */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #404040;
+    --link-color: #1e4976;
+    --link-hover-color: #1e4976;
+    --meta-color: #808080;
+    --border-color: #e7e7e7;
+    --blockquote-bg: #f5f5f5;
+    --table-border: #e7e7e7;
+    --pre-bg: #f5f5f5;
+    --heading-color: #404040;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e4e4e4;
+    --link-color: #1e4976;
+    --link-hover-color: #2a5c8f;
+    --meta-color: #aaaaaa;
+    --border-color: #404040;
+    --blockquote-bg: #2d2d2d;
+    --table-border: #404040;
+    --pre-bg: #2d2d2d;
+    --heading-color: #e4e4e4;
+}
+
+/* 应用主题颜色 */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* 导航栏保持透明 */
+.navbar-default {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+    color: white !important;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #1e4976 !important;
+}
+
+/* 当页面滚动时导航栏变白 */
+.navbar-custom.is-fixed {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-custom.is-fixed .navbar-brand,
+.navbar-custom.is-fixed .navbar-nav > li > a {
+    color: #404040 !important;
+}
+
+/* 标题下的横线不应用主题 */
+.intro-header .post-heading .meta {
+    color: white !important;
+}
+
+hr {
+    border-color: #e7e7e7 !important;
+}
+
+/* 其他元素应用主题 */
+a {
+    color: var(--link-color);
+}
+
+a:hover,
+a:focus {
+    color: var(--link-hover-color);
+}
+
+.post-preview > a {
+    color: var(--text-color);
+}
+
+.post-preview > a:hover,
+.post-preview > a:focus {
+    color: var(--link-hover-color);
+}
+
+.post-preview > .post-meta {
+    color: var(--meta-color);
+}
+
+.post-content {
+    color: var(--text-color);
+}
+
+blockquote {
+    background-color: var(--blockquote-bg);
+    border-left-color: var(--border-color);
+}
+
+table {
+    border-color: var(--table-border);
+}
+
+pre {
+    background-color: var(--pre-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+/* 主题切换按钮样式 */
+.theme-switch-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.theme-switch {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-switch:hover {
+    transform: scale(1.1);
+    background-color: #f8f8f8;
+}
+
+.theme-switch i {
+    color: #333;
+    font-size: 20px;
+}
+
+/* 深色主题样式 */
+[data-theme="dark"] .theme-switch {
+    background-color: #333;
+    border-color: #444;
+}
+
+[data-theme="dark"] .theme-switch:hover {
+    background-color: #444;
+}
+
+[data-theme="dark"] .theme-switch i {
+    color: #fff;
+}
+
+/* 浅色主题样式 */
+[data-theme="light"] .theme-switch {
+    background-color: #fff;
+    border: 2px solid #ddd;
+}
+
+[data-theme="light"] .theme-switch:hover {
+    background-color: #f8f8f8;
+}
+
+[data-theme="light"] .theme-switch i {
+    color: #333;
+}
+
+/* 文章内容区域应用主题 */
+.post-preview, 
+.post-content,
+.article-content {
+    color: var(--text-color);
+}
+
+/* 标签和分类链接 */
+.post-tags a,
+.post-categories a {
+    color: #1e4976;
+    border: 1px solid #1e4976;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.post-tags a:hover,
+.post-categories a:hover {
+    color: #fff;
+    background-color: #1e4976;
+    text-decoration: none;
+}
+
+/* 分页按钮 */
+.pager li > a,
+.pager li > span {
+    background-color: var(--bg-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.pager li > a:hover,
+.pager li > a:focus {
+    background-color: #1e4976;
+    color: #fff;
+    border-color: #1e4976;
+}
+
+/* 页脚 */
+footer {
+    background-color: var(--bg-color);
+}
+
+footer .copyright {
+    color: var(--meta-color);
+}
+
+/* 代码块 */
+pre code {
+    color: var(--text-color);
+    background-color: var(--pre-bg);
+}
+
+/* 暗色主题样式 */
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .navbar-default {
+    background-color: var(--nav-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-default .navbar-brand,
+[data-theme="dark"] .navbar-default .navbar-nav > li > a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .post-preview > a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .post-preview > a:hover,
+[data-theme="dark"] .post-preview > a:focus {
+    color: #2a5c8f;
+}
+
+[data-theme="dark"] .post-meta,
+[data-theme="dark"] .post-meta a {
+    color: var(--meta-color);
+}
+
+[data-theme="dark"] hr {
+    border-color: var(--border-color);
+}
+
+/* 归档页面 */
+[data-theme="dark"] .post-title.archive {
+    color: var(--archive-title-color);
+}
+
+[data-theme="dark"] .post-meta.archive {
+    color: var(--meta-color);
+}
+
+/* 文章详情页 */
+[data-theme="dark"] .post-heading h1,
+[data-theme="dark"] .post-heading .subheading,
+[data-theme="dark"] .post-heading .meta {
+    color: #fff;
+}
+
+[data-theme="dark"] .article-content {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] blockquote {
+    background-color: var(--blockquote-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] code {
+    background-color: var(--code-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] table {
+    border-color: var(--table-border);
+}
+
+[data-theme="dark"] table th,
+[data-theme="dark"] table td {
+    border-color: var(--table-border);
+    background-color: var(--table-bg);
+}
+
+/* 标签和分类页面 */
+[data-theme="dark"] .tag-cloud a,
+[data-theme="dark"] .category-list a {
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .tag-cloud a:hover,
+[data-theme="dark"] .category-list a:hover {
+    color: #2a5c8f;
+    border-color: #2a5c8f;
+}
+
+/* 搜索页面 */
+[data-theme="dark"] .search-input {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .search-result {
+    background-color: var(--bg-color);
+    border-color: var(--border-color);
+}
+
+/* 保持背景图片部分不受影响 */
+[data-theme="dark"] .intro-header {
+    color: #fff;
+}
+
+/* 保持背景图片部分的文字始终为白色 */
+.intro-header {
+    color: #fff !important;
+}
+
+.intro-header .site-heading h1,
+.intro-header .post-heading h1,
+.intro-header .page-heading h1,
+.intro-header .site-heading .subheading,
+.intro-header .post-heading .subheading,
+.intro-header .page-heading .subheading,
+.intro-header .post-heading .meta,
+.intro-header .site-heading span {
+    color: #fff !important;
+}
+
+/* 选中文本的样式 */
+::selection {
+    background-color: #1e4976;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background-color: #1e4976;
+    color: #ffffff;
+} 

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="弗兰克"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="搜索"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="弗兰克的博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://example.comimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://example.comimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>搜索 - 弗兰克的博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/theme.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+    <!-- favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <style>
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .search-input:focus {
+            border-color: #666;
+            outline: none;
+        }
+        .search-type {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .search-type label {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .search-type input[type="radio"] {
+            margin-right: 5px;
+        }
+        .search-result {
+            margin-top: 20px;
+        }
+        .result-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .result-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .result-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .result-title a {
+            color: #333;
+            text-decoration: none;
+        }
+        .result-meta {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .result-meta span {
+            margin-right: 15px;
+        }
+        .no-result {
+            text-align: center;
+            color: #666;
+            margin-top: 30px;
+        }
+        [data-theme="dark"] .search-input {
+            background-color: #333;
+            color: #fff;
+            border-color: #444;
+        }
+        [data-theme="dark"] .search-input:focus {
+            border-color: #666;
+        }
+        [data-theme="dark"] .result-item {
+            background-color: #333;
+            border-color: #444;
+        }
+        [data-theme="dark"] .result-title a {
+            color: #fff;
+        }
+        [data-theme="dark"] .result-meta {
+            color: #999;
+        }
+        [data-theme="dark"] .no-result {
+            color: #999;
+        }
+    </style>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">弗兰克的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                主页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                标签
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                分类
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                关于
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/search">
+                            
+                                搜索
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    
+
+
+    <!-- 头部部分 -->
+    <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>搜索</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 内容部分 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- 搜索框部分 -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="输入关键词搜索文章..." id="searchInput">
+                    <div class="search-type">
+                        <label><input type="radio" name="searchType" value="title" checked> 标题</label>
+                        <label><input type="radio" name="searchType" value="tag"> 标签</label>
+                        <label><input type="radio" name="searchType" value="category"> 分类</label>
+                    </div>
+                    <div class="search-result" id="searchResult"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    &copy;2024-2025 <a href="/">弗兰克的博客</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<!-- 主题切换按钮 -->
+<div class="theme-switch-wrapper" onclick="toggleTheme()">
+    <div class="theme-switch">
+        <i class="fa fa-moon-o fa-lg"></i>
+    </div>
+</div>
+
+<!-- Theme Switch -->
+<script src="/js/theme.js"></script>
+
+    <!-- 搜索功能脚本 -->
+    <script>
+        // 博客文章数据
+        const posts = [
+            {
+                title: "AI时代的到来：ChatGPT带来的改变",
+                url: "/2024/11/24/ChatGPT/",
+                date: "2024-11-24",
+                tags: ["AI", "科技"],
+                category: "科技类"
+            },
+            {
+                title: "Claude：Open AI最强劲的对手",
+                url: "/2024/11/24/Claude/",
+                date: "2024-11-24",
+                tags: ["AI", "科技"],
+                category: "科技类"
+            },
+            {
+                title: "从面馆学徒到神龙大侠：功夫熊猫系列解析",
+                url: "/2024/11/24/功夫熊猫/",
+                date: "2024-11-24",
+                tags: ["动画"],
+                category: "娱乐类"
+            },
+            {
+                title: "魔法世界的奇妙冒险：哈利波特系列解析",
+                url: "/2024/11/24/哈利波特/",
+                date: "2024-11-24",
+                tags: ["魔法"],
+                category: "娱乐类"
+            },
+            {
+                title: "《See》影评：在黑暗中探寻人性之光",
+                url: "/2024/11/24/see/",
+                date: "2024-11-24",
+                tags: ["美剧", "影视"],
+                category: "娱乐类"
+            },
+            {
+                title: "《绝命毒师》：电视剧之巅，永恒的人性探讨",
+                url: "/2024/11/24/绝命毒师/",
+                date: "2024-11-24",
+                tags: ["美剧", "影视"],
+                category: "娱乐类"
+            },
+            {
+                title: "《风骚律师》：一部比肩《绝命毒师》的法律犯罪剧",
+                url: "/2024/11/23/风骚律师/",
+                date: "2024-11-23",
+                tags: ["美剧", "影视"],
+                category: "娱乐类"
+            },
+            {
+                title: "10个超地道的英语俚语，学会让你脱口而出",
+                url: "/2024/11/25/英语俚语/",
+                date: "2024-11-25",
+                tags: ["英语"],
+                category: "学习类"
+            },
+            {
+                title: "英语缩写",
+                url: "/2024/11/24/英语缩写/",
+                date: "2024-11-24",
+                tags: ["英语"],
+                category: "学习类"
+            },
+            {
+                title: "《盗梦空间》：现实与梦境的模糊界限",
+                url: "/2024/11/25/盗梦空间/",
+                date: "2024-11-25",
+                tags: ["科幻", "影视"],
+                category: "娱乐类"
+            },
+            {
+                title: "漫威电影宇宙(MCU)完整观影指南",
+                url: "/2024/11/24/漫威电影/",
+                date: "2024-11-24",
+                tags: ["科幻", "影视"],
+                category: "娱乐类"
+            },
+            {
+                title: "《肖申克的救赎》",
+                url: "/2024/11/25/肖申克的救赎/",
+                date: "2024-11-25",
+                tags: ["励志", "影视"],
+                category: "娱乐类"
+            }
+        ];
+
+        // 搜索功能实现
+        const searchInput = document.getElementById('searchInput');
+        const searchResult = document.getElementById('searchResult');
+        let searchTimeout;
+
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            const searchType = document.querySelector('input[name="searchType"]:checked').value;
+            
+            if (!query) {
+                searchResult.innerHTML = '';
+                return;
+            }
+
+            const results = posts.filter(post => {
+                switch(searchType) {
+                    case 'title':
+                        return post.title.toLowerCase().includes(query);
+                    case 'tag':
+                        return post.tags.some(tag => tag.toLowerCase().includes(query));
+                    case 'category':
+                        return post.category.toLowerCase().includes(query);
+                    default:
+                        return false;
+                }
+            });
+
+            displayResults(results);
+        }
+
+        function displayResults(results) {
+            if (results.length === 0) {
+                searchResult.innerHTML = '<div class="no-result">未找到相关文章</div>';
+                return;
+            }
+
+            const resultsHtml = results.map(post => `
+                <div class="result-item">
+                    <div class="result-title">
+                        <a href="${post.url}">${post.title}</a>
+                    </div>
+                    <div class="result-meta">
+                        <span>发布日期: ${post.date}</span>
+                        <span>分类: ${post.category}</span>
+                        <span>标签: ${post.tags.join(', ')}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            searchResult.innerHTML = resultsHtml;
+        }
+
+        // 添加输入事件监听
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(performSearch, 300);
+        });
+
+        // 添加搜索类型切换事件监听
+        document.querySelectorAll('input[name="searchType"]').forEach(radio => {
+            radio.addEventListener('change', performSearch);
+        });
+    </script>
+
+</body>
+
+</html>
